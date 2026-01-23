@@ -5,6 +5,7 @@ include: "/views/users.view.lkml"
 include: "/views/products.view.lkml"
 
 explore: order_items {
+  sql_always_where: ${order_id} ;;
   join: orders {
     type: left_outer
     sql_on: ${order_items.order_id} = ${orders.id} ;;
