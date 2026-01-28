@@ -4,7 +4,7 @@ include: "/views/inventory_items.view.lkml"
 include: "/views/users.view.lkml"
 include: "/views/products.view.lkml"
 include: "/tarundashboard.dashboard.lookml"
-include: "/E_dashboard.dashboard.lookml"
+include: "/Edashboard.dashboard.lookml"
 include: "/F_dashboard.dashboard.lookml"
 include: "/G_dashbaord.dashboard.lookml"
 include: "/H_dashbaord.dashboard.lookml"
@@ -25,6 +25,7 @@ include: "/Y_dashboard.dashboard.lookml"
 include: "/Z_dashboard.dashboard.lookml"
 include: "/v_dashboard.dashboard.lookml"
 
+#
 explore: order_items {
   sql_always_where: ${order_id} ;;
   join: orders {
