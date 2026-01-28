@@ -3,6 +3,7 @@ include: "/views/orders.view.lkml"
 include: "/views/inventory_items.view.lkml"
 include: "/views/users.view.lkml"
 include: "/views/products.view.lkml"
+include: "/tarundashboard.dashboard.lookml"
 
 explore: order_items {
   sql_always_where: ${order_id} ;;
