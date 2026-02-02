@@ -210,12 +210,7 @@ explore: persons {}
 
 explore: persons2 {}
 
-explore: products {
-  access_filter: {
-    field: department
-    user_attribute: filters
-  }
-}
+explore: products {}
 
 explore: salary {
   join: dept {
