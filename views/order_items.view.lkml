@@ -21,6 +21,12 @@ view: order_items {
     type: string
     sql: ${TABLE}.phone ;;
   }
+
+  dimension: project_id {
+    type: string
+    sql: "ai_Chat" ;;
+  }
+
   dimension: phones {
     type: string
     sql: ${TABLE}.phones ;;
