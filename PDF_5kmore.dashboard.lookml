@@ -14,5 +14,5 @@
       type: table
       fields: [user_data.id, user_data.count]
       sorts: [user_data.count desc 0]
-      limit: 4000
+      limit: 400
       column_limit: 50
