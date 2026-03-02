@@ -2,6 +2,7 @@ connection: "thelook"
 include: "/PDF_5kmore.dashboard.lookml"
 # include all the views
 include: "/views/**/*.view.lkml"
+include: "/views/repro_caret_injection.view.lkml"
 
 datagroup: cm_260_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
@@ -9,6 +10,8 @@ datagroup: cm_260_default_datagroup {
 }
 
 persist_with: cm_260_default_datagroup
+
+explore:repro_caret_injection  {}
 
 explore: billion_orders {
   join: orders {
