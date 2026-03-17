@@ -2,16 +2,17 @@ view: dt_inventory_products {
   # sql_table_name: warehouse.customer
   derived_table: {
     sql: SELECT
-    (DATE(`inventory_items`.`sold_at`)) AS `sold_at`,
-    `inventory_items`.`product_id` AS `product_id`,
+    (DATE(`inventory`.`sold_at`)) AS `sold_at`,
+    `inventory`.`product_id` AS `product_id`,
     `products`.`sku` AS `sku`,
     `products`.`brand` AS `brand`,
     `products`.`item_name` AS `item_name`,
     COUNT(*) AS `count`
 FROM
-    `demo_db`.`inventory_items` AS `inventory_items`
-    LEFT JOIN `demo_db`.`products` AS `products` ON `inventory_items`.`product_id` = `products`.`id`
-WHERE ((( `inventory_items`.`sold_at` ) >= ((TIMESTAMP('2019-01-01'))) AND ( `inventory_items`.`sold_at` ) < ((DATE_ADD(TIMESTAMP('2019-01-01'),INTERVAL 1 year)))))
+   -- `demo_db`.`inventory_items` AS `inventory_items`
+   `demo_db`.`inventory_items` AS `inventory`
+    LEFT JOIN `demo_db`.`products` AS `products` ON `inventory`.`product_id` = `products`.`id`
+WHERE ((( `inventory`.`sold_at` ) >= ((TIMESTAMP('2019-01-01'))) AND ( `inventory`.`sold_at` ) < ((DATE_ADD(TIMESTAMP('2019-01-01'),INTERVAL 1 year)))))
 GROUP BY
     1,
     2,
